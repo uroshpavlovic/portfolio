@@ -84,16 +84,15 @@ img {
 /* Project Detail Layout */
 .project-layout {
   display: flex;
-  gap: 40px;
-  padding: 40px 0;
+  gap: 44px;
 }
 
 .project-images {
-  flex: 5;
+  flex: 1.55;
 }
 
 .project-info {
-  flex: 3;
+  flex: 1;
   position: sticky;
   top: 100px;
   align-self: flex-start;

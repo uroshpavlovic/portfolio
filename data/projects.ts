@@ -8,11 +8,10 @@ export const projects: Project[] = [
     coverImage: "https://placehold.co/600x800/e8ddd5/333333?text=Project+1",
     type: "internal",
     description: [
-      "This is the first paragraph describing the project. It explains the concept and the creative process behind the work.",
-      "The second paragraph provides more details about the techniques used and the inspiration for the piece.",
+      "Liceulice is a street magazine. No. 89 was dedicated to football and everything related to football. This sport, like anything else, brings together such diverse people in one place, and serves as a framework for such diverse conversations. In this issue, we were interested in what in this game, and everything that follows it, can be truly progressive, and what can be truly dangerous.",
     ],
-    client: "Client Name",
-    year: "2024",
+    client: "Liceulice",
+    year: "2023",
     images: [
       "https://placehold.co/1200x800/e8ddd5/333333?text=Image+1",
       "https://placehold.co/1200x900/e8ddd5/333333?text=Image+2",
