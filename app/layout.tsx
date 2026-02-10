@@ -23,9 +23,6 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
-        <head>
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        </head>
         <body className={inter.className}>
           <Header />
           <main className="min-h-[calc(100vh-140px)] px-4 md:px-6 lg:px-28.75">{children}</main>
