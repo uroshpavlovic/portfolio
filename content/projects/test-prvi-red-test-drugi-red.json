@@ -6,5 +6,16 @@
     "Vivamus non erat accumsan risus ultrices gravida malesuada vel sapien. Fusce et metus eu mauris vulputate accumsan. Donec sit amet dignissim tortor. Suspendisse efficitur purus porta diam tincidunt maximus. Vivamus vel nulla a quam auctor hendrerit id ac arcu. Duis quis erat quis nisl consequat rutrum ut id justo. Quisque et suscipit mauris. Morbi volutpat ultricies arcu non porta. Quisque aliquet arcu id risus euismod facilisis. Nunc suscipit vulputate augue et porta."
   ],
   "coverImage": "/images/projects/e40-13-1080x1350.jpg",
-  "type": "internal"
+  "type": "internal",
+  "gallery": [
+    {
+      "layout": "single",
+      "image1": "/images/projects/ioncleantech-1080x1350.jpg"
+    },
+    {
+      "layout": "double",
+      "image1": "/images/projects/img_3410.png",
+      "image2": "/images/projects/img_3410.png"
+    }
+  ]
 }
