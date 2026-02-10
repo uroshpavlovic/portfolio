@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { Project } from "@/types";
 
@@ -7,8 +7,17 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const isInternal = project.type === "internal";
+
   const cardContent = (
-    <div style={{ position: "relative", overflow: "hidden" }}>
+    <div
+      className={isInternal ? "project-image-transition" : undefined}
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        background: "rgba(255, 0, 0, 0.3)", // DEBUG: red
+      }}
+    >
       <Image
         src={project.coverImage}
         alt={project.title}

@@ -26,7 +26,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <div className="project-layout">
       <div className="project-images">
         {project.images?.map((image, index) => (
-          <div key={index} style={{ marginBottom: "16px" }}>
+          <div
+            key={index}
+            className={index === 0 ? "project-image-transition" : undefined}
+            style={{
+              marginBottom: "16px",
+              background: index === 0 ? "rgba(0, 0, 255, 0.3)" : undefined, // DEBUG: blue
+            }}
+          >
             <Image
               src={image}
               alt={`${project.title} - Image ${index + 1}`}
