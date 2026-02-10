@@ -9,8 +9,8 @@
   ],
   "client": "Liceulice",
   "year": "2023",
-  "images": [
-    "/images/projects/lice-ulice-watching-football/cover.jpg",
-    "/images/projects/lice-ulice-watching-football/01.jpg"
+  "gallery": [
+    { "layout": "single", "image1": "/images/projects/lice-ulice-watching-football/cover.jpg" },
+    { "layout": "single", "image1": "/images/projects/lice-ulice-watching-football/01.jpg" }
   ]
 }

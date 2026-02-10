@@ -9,7 +9,7 @@
   ],
   "client": "Client Six",
   "year": "2024",
-  "images": [
-    "/images/projects/ioncleantech/cover.jpg"
+  "gallery": [
+    { "layout": "single", "image1": "/images/projects/ioncleantech/cover.jpg" }
   ]
 }

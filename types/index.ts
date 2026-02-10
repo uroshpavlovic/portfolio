@@ -1,3 +1,9 @@
+export interface GalleryRow {
+  layout: 'single' | 'double';
+  image1: string;
+  image2?: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -8,5 +14,5 @@ export interface Project {
   description?: string[];
   client?: string;
   year?: string;
-  images?: string[];
+  gallery?: GalleryRow[];
 }

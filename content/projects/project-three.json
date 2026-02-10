@@ -10,7 +10,7 @@
   ],
   "client": "Another Client",
   "year": "2023",
-  "images": [
-    "/images/projects/end-of-story/cover.jpg"
+  "gallery": [
+    { "layout": "single", "image1": "/images/projects/end-of-story/cover.jpg" }
   ]
 }

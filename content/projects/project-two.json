@@ -9,7 +9,7 @@
   ],
   "client": "Client Two",
   "year": "2023",
-  "images": [
-    "/images/projects/broken-string/cover.jpg"
+  "gallery": [
+    { "layout": "single", "image1": "/images/projects/broken-string/cover.jpg" }
   ]
 }

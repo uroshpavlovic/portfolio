@@ -30,8 +30,11 @@ collections:
         widget: "list"
         required: false
         field: { label: "Paragraph", name: "paragraph", widget: "text" }
-      - label: "Gallery Images"
-        name: "images"
+      - label: "Gallery"
+        name: "gallery"
         widget: "list"
         required: false
-        field: { label: "Image", name: "image", widget: "image" }
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["single", "double"], default: "single", hint: "Single: one full-width image. Double: two images side by side." }
+          - { label: "Image 1", name: "image1", widget: "image", required: true }
+          - { label: "Image 2", name: "image2", widget: "image", required: false, hint: "Only used for double layout" }

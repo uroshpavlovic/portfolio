@@ -25,26 +25,41 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <div className="project-layout">
       <div className="project-images">
-        {project.images?.map((image, index) => (
+        {project.gallery?.map((row, index) => (
           <div
             key={index}
             className={index === 0 ? "project-image-transition" : undefined}
             style={{
               marginBottom: "16px",
+              display: row.layout === "double" ? "flex" : "block",
+              gap: row.layout === "double" ? "16px" : undefined,
               background: "var(--placeholder)",
             }}
           >
             <Image
-              src={image}
-              alt={`${project.title} - Image ${index + 1}`}
-              width={1200}
-              height={800}
+              src={row.image1}
+              alt={`${project.title} - Image ${index + 1}a`}
+              width={row.layout === "double" ? 600 : 1200}
+              height={row.layout === "double" ? 400 : 800}
               style={{
-                width: "100%",
+                width: row.layout === "double" ? "50%" : "100%",
                 height: "auto",
                 display: "block",
               }}
             />
+            {row.layout === "double" && row.image2 && (
+              <Image
+                src={row.image2}
+                alt={`${project.title} - Image ${index + 1}b`}
+                width={600}
+                height={400}
+                style={{
+                  width: "50%",
+                  height: "auto",
+                  display: "block",
+                }}
+              />
+            )}
           </div>
         ))}
       </div>

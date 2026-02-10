@@ -9,7 +9,7 @@
   ],
   "client": "Client Four",
   "year": "2023",
-  "images": [
-    "/images/projects/el/cover.jpg"
+  "gallery": [
+    { "layout": "single", "image1": "/images/projects/el/cover.jpg" }
   ]
 }
