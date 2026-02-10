@@ -1,12 +1,15 @@
 {
-  "order": 0,
-  "title": "Test prvi red\nTest drugi red\n",
+  "title": "Test prvi red\nTest drugi red",
   "slug": "test",
+  "coverImage": "/images/projects/e40-13-1080x1350.jpg",
+  "type": "internal",
+  "order": 0,
+  "externalUrl": "",
+  "client": "",
+  "year": "",
   "description": [
     "Vivamus non erat accumsan risus ultrices gravida malesuada vel sapien. Fusce et metus eu mauris vulputate accumsan. Donec sit amet dignissim tortor. Suspendisse efficitur purus porta diam tincidunt maximus. Vivamus vel nulla a quam auctor hendrerit id ac arcu. Duis quis erat quis nisl consequat rutrum ut id justo. Quisque et suscipit mauris. Morbi volutpat ultricies arcu non porta. Quisque aliquet arcu id risus euismod facilisis. Nunc suscipit vulputate augue et porta."
   ],
-  "coverImage": "/images/projects/e40-13-1080x1350.jpg",
-  "type": "internal",
   "gallery": [
     {
       "layout": "single",
@@ -16,6 +19,11 @@
       "layout": "double",
       "image1": "/images/projects/16-21_bolest_x-3.jpg",
       "image2": "/images/projects/img_3410.png"
+    },
+    {
+      "layout": "double",
+      "image1": "/images/projects/int2025.png",
+      "image2": "/images/projects/int2025.png"
     }
   ]
 }
