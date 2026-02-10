@@ -5,8 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Content Manager</title>
+  <style>
+    .preview {
+      font-family: 'Inter', sans-serif;
+      background: #F7F1ED;
+      color: #30354F;
+      padding: 24px;
+      min-height: 100%;
+    }
+    .preview-title {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .preview-meta {
+      font-size: 0.875rem;
+      color: #666666;
+      margin-bottom: 24px;
+    }
+    .preview-meta span {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .preview-description p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .preview-cover {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 24px;
+    }
+    .preview-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .preview-gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    var ProjectPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']) || '';
+        var coverImage = entry.getIn(['data', 'coverImage']);
+        var client = entry.getIn(['data', 'client']);
+        var year = entry.getIn(['data', 'year']);
+        var description = entry.getIn(['data', 'description']);
+        var images = entry.getIn(['data', 'images']);
+        var getAsset = this.props.getAsset;
+
+        return h('div', { className: 'preview' },
+          h('div', { className: 'preview-title' },
+            title.split('\n').map(function (line, i) {
+              return h('span', { key: i }, line, i < title.split('\n').length - 1 ? h('br') : null);
+            })
+          ),
+
+          h('div', { className: 'preview-meta' },
+            client ? h('span', {}, 'Client: ' + client) : null,
+            year ? h('span', {}, 'Year: ' + year) : null
+          ),
+
+          coverImage
+            ? h('img', { className: 'preview-cover', src: getAsset(coverImage).toString() })
+            : null,
+
+          description && description.size > 0
+            ? h('div', { className: 'preview-description' },
+                description.map(function (paragraph, i) {
+                  return h('p', { key: i }, paragraph);
+                }).toArray()
+              )
+            : null,
+
+          images && images.size > 0
+            ? h('div', { className: 'preview-gallery' },
+                images.map(function (image, i) {
+                  return h('img', { key: i, src: getAsset(image).toString() });
+                }).toArray()
+              )
+            : null
+        );
+      }
+    });
+
+    CMS.registerPreviewTemplate('projects', ProjectPreview);
+  </script>
 </body>
 </html>
