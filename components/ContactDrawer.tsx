@@ -40,7 +40,7 @@ export default function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
         </div>
 
         <div style={{ padding: "0 115px", maxWidth: "550px" }}>
-          <p style={{ lineHeight: 1.8 }}>
+          <p style={{ lineHeight: "var(--line-height-relaxed)" }}>
             Uroš Pavlović is tra la la la la la tra la la la laa
             tra la la la la laa tra la la la laa tra la la la la laa
             tra la la la laa tra la la la la laa tra la la la laa

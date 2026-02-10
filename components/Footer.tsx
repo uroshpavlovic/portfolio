@@ -7,12 +7,12 @@ export default function Footer() {
     <footer style={{
       marginTop: "50px",
       padding: "40px 115px",
-      background: "#ffffff",
+      background: "var(--surface)",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      fontSize: "0.875rem",
-      color: "#666",
+      fontSize: "var(--font-size-sm)",
+      color: "var(--text-muted)",
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
         <p>All content copyright Uroš Pavlović {year} ©</p>

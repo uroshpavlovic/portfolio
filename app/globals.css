@@ -1,8 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F7F1ED;
-  --foreground: #000000;
+  /* Palette */
+  --color-beige: #F7F1ED;
+  --color-black: #000000;
+  --color-navy: #30354F;
+  --color-gray-light: #BBB9BE;
+  --color-white: #ffffff;
+  --color-gray-dark: #666666;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Semantic Colors */
+  --background: var(--color-beige);
+  --foreground: var(--color-black);
+  --surface: var(--color-white);
+  --placeholder: var(--color-gray-light);
+  --text-muted: var(--color-gray-dark);
+  --overlay: var(--color-overlay);
+
+  /* Typography */
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 2rem;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
 }
 
 * {
@@ -33,6 +58,30 @@ img {
   height: auto;
 }
 
+/* Text Levels */
+.text-heading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.text-body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--foreground);
+}
+
+.text-body-relaxed {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--foreground);
+}
+
+.text-meta {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
 /* Masonry Grid */
 .masonry-grid {
   display: flex;
@@ -53,7 +102,7 @@ img {
 .drawer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--overlay);
   z-index: 40;
   opacity: 0;
   visibility: hidden;
@@ -66,10 +115,13 @@ img {
 }
 
 .drawer {
+  --background: var(--color-navy);
+  --foreground: var(--color-beige);
+  --text-muted: var(--color-beige);
   position: fixed;
   inset: 0;
-  background: #30354F;
-  color: #F7F1ED;
+  background: var(--background);
+  color: var(--foreground);
   z-index: 50;
   opacity: 0;
   visibility: hidden;
@@ -99,10 +151,10 @@ img {
 }
 
 .project-title {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
   margin-bottom: 24px;
-  line-height: 1.2;
+  line-height: var(--line-height-tight);
 }
 
 .project-description {
@@ -111,12 +163,12 @@ img {
 
 .project-description p {
   margin-bottom: 16px;
-  line-height: 1.6;
+  line-height: var(--line-height-normal);
 }
 
 .project-meta {
-  font-size: 0.875rem;
-  color: #666;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
 }
 
 .project-meta p {
@@ -189,6 +241,10 @@ img {
   }
 
   .project-title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-md);
+  }
+
+  .text-heading {
+    font-size: var(--font-size-md);
   }
 }

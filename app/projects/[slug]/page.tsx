@@ -31,7 +31,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             className={index === 0 ? "project-image-transition" : undefined}
             style={{
               marginBottom: "16px",
-              background: "#BBB9BE",
+              background: "var(--placeholder)",
             }}
           >
             <Image
