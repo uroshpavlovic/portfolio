@@ -14,7 +14,7 @@ export default function Header() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "flex-start",
-        padding: "24px",
+        padding: "24px 115px",
         position: "sticky",
         top: 0,
         background: "var(--background)",

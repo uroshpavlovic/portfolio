@@ -15,7 +15,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       style={{
         position: "relative",
         overflow: "hidden",
-        background: "rgba(255, 0, 0, 0.3)", // DEBUG: red
+        background: "#BBB9BE", 
       }}
     >
       <Image
