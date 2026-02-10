@@ -4,15 +4,23 @@
 
 Style directly in JSX with Tailwind classes. No inline `style={{}}` objects, no custom CSS classes for static layout.
 
-**globals.css is only for:**
-- CSS custom properties (`:root` variables)
-- Base resets (`*`, `body`, `a`, `img`)
-- Masonry grid classes (required by `react-masonry-css` library)
-- Contact drawer animations (open/close transitions)
-- View Transitions API animations
-- Responsive overrides that can't be done with Tailwind
+Use Tailwind 4 canonical class syntax:
+- CSS variables: `bg-(--background)`, `text-(--text-muted)` (not `bg-[var(--background)]`)
+- Spacing: `px-28.75` for 115px (not `px-[115px]`) where a canonical form exists
+- Arbitrary values only when no canonical form exists (e.g., `lg:h-[181.5px]`)
+
+**globals.css uses CSS Cascade Layers** (`@layer base`, `@layer components`):
+- `@layer base`: CSS custom properties (`:root` variables), base resets (`*`, `body`, `a`, `img`)
+- `@layer components`: Text-level classes, masonry grid, drawer animations, project layout
+- Unlayered: View Transitions (`@supports`), responsive overrides
+
+> **Important:** All custom CSS must be inside `@layer base` or `@layer components` so Tailwind utility classes (in `@layer utilities`) can override them. Unlayered CSS beats all layers and will break Tailwind utilities.
 
 **Everything else → Tailwind classes in JSX.**
+
+## Testing
+
+Changes will be tested by the user in the browser. After making styling changes, ensure the dev server is running (`npm run dev`) for hot reload.
 
 ---
 
@@ -20,24 +28,60 @@ Style directly in JSX with Tailwind classes. No inline `style={{}}` objects, no 
 
 ```css
 :root {
-  --background: #F7F1ED;   /* Warm cream — page background */
-  --foreground: #000000;   /* Pure black — primary text */
-  --font-inter: ...;       /* Set by Next.js next/font/google */
+  /* Palette */
+  --color-beige: #F7F1ED;
+  --color-black: #000000;
+  --color-navy: #30354F;
+  --color-gray-light: #BBB9BE;
+  --color-white: #ffffff;
+  --color-gray-dark: #666666;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Semantic Colors */
+  --background: var(--color-beige);
+  --foreground: var(--color-black);
+  --surface: var(--color-white);
+  --placeholder: var(--color-gray-light);
+  --text-muted: var(--color-gray-dark);
+  --overlay: var(--color-overlay);
+
+  /* Typography */
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 2rem;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
 }
 ```
 
 ## Color Palette
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--background` | `#F7F1ED` | Page background, drawer background |
-| `--foreground` | `#000000` | Primary text color |
-| Meta gray | `#666` | Metadata text (client, year), footer |
-| Overlay | `rgba(0,0,0,0.5)` | Drawer backdrop |
+| Variable | Value | Usage |
+|----------|-------|-------|
+| `--color-beige` | `#F7F1ED` | Page background |
+| `--color-black` | `#000000` | Primary text |
+| `--color-navy` | `#30354F` | Drawer background |
+| `--color-gray-light` | `#BBB9BE` | Image placeholder background |
+| `--color-white` | `#ffffff` | Footer background |
+| `--color-gray-dark` | `#666666` | Muted text (metadata, footer) |
+| `--color-overlay` | `rgba(0,0,0,0.5)` | Drawer backdrop |
 
-Placeholder image backgrounds (for reference):
-- `#e8ddd5` warm tan, `#ddd5e8` lavender, `#d5e8dd` soft green
-- `#e8e5d5` beige, `#d5dde8` soft blue, `#e5d5e8` mauve
+### Semantic Tokens
+
+| Token | Default | Drawer Override | Usage |
+|-------|---------|----------------|-------|
+| `--background` | `--color-beige` | `--color-navy` | Page/section background |
+| `--foreground` | `--color-black` | `--color-beige` | Primary text |
+| `--surface` | `--color-white` | — | Footer background |
+| `--placeholder` | `--color-gray-light` | — | Image placeholder bg |
+| `--text-muted` | `--color-gray-dark` | `--color-beige` | Metadata text |
+| `--overlay` | `rgba(0,0,0,0.5)` | — | Drawer backdrop |
+
+The `.drawer` class overrides `--background`, `--foreground`, and `--text-muted` so text-level classes and Tailwind color utilities auto-flip inside the drawer.
 
 ## Typography
 
@@ -67,12 +111,20 @@ Values currently used across components:
 
 ## Responsive Breakpoints
 
-| Breakpoint | Usage |
-|------------|-------|
-| `640px` | Masonry grid: 1 column |
-| `768px` | Project layout: stacked, smaller title, reduced padding |
-| `1024px` | Masonry grid: 2 columns |
-| Default (>1024) | Masonry grid: 3 columns |
+Tailwind mobile-first: base = mobile, `md:` = 768px+, `lg:` = 1024px+.
+
+| Element | Mobile (base) | Tablet (md:) | Desktop (lg:) |
+|---------|---------------|--------------|---------------|
+| Side padding | 16px (`px-4`) | 40px (`md:px-10`) | 115px (`lg:px-28.75`) |
+| Header height | 100px (`h-25`) | 140px (`md:h-35`) | 181.5px (`lg:h-[181.5px]`) |
+| Logo | 60×63 | 80×85 | 107×113 |
+| Menu trigger | 70×48 | 92×64 | 123×85 |
+| Footer padding | 24px 16px | 32px 40px | 40px 115px |
+| Footer direction | column | row | row |
+| Signature | 100×33 | 120×40 | 150×50 |
+| Drawer logo | 54×57 (5px padding) | 72×77 | 96×102 |
+| Masonry columns | 1 (≤640px) | 2 (≤1024px) | 3 |
+| Project layout | stacked (≤768px) | side-by-side | side-by-side |
 
 ## Z-Index Stack
 
@@ -109,9 +161,9 @@ The shared element transition creates a Pinterest-style expand effect when navig
 
 ```
 Overlay: opacity 0→1, visibility hidden→visible, 0.3s ease
-Panel: translateX(-100%) → translateX(0), 0.3s ease
-Direction: slides in from left
-Width: 320px (max 80vw on mobile)
+Panel: opacity 0→1, visibility hidden→visible, 0.3s ease
+Style: Full-screen overlay with fade in/out
+Background: var(--color-navy) (#30354F)
 ```
 
 ## Masonry Grid (library-driven)

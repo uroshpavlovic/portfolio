@@ -10,31 +10,28 @@ export default function Header() {
 
   return (
     <>
-      <header style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "flex-start",
-        padding: "24px 115px",
-        position: "sticky",
-        top: 0,
-        background: "var(--background)",
-        zIndex: 30,
-        height: "181.5px",
-      }}>
+      <header className="flex justify-between items-start sticky top-0 bg-(--background) z-30 p-4 h-25 md:py-5 md:px-6 md:h-35 lg:py-6 lg:px-28.75 lg:h-[181.5px]">
         <Link href="/">
-          <Image src="/logo.svg" alt="Uroš Pavlović" width={107} height={113}  />
+          <Image
+            src="/logo.svg"
+            alt="Uroš Pavlović"
+            width={107}
+            height={113}
+            className="w-15 h-15.75 md:w-20 md:h-21.25 lg:w-26.75 lg:h-28.25"
+          />
         </Link>
 
         <button
           onClick={() => setIsDrawerOpen(true)}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            padding: 0,
-          }}
+          className="cursor-pointer"
         >
-          <Image src="/menu_trigger_0.svg" alt="Contact" width={123} height={85} />
+          <Image
+            src="/menu_trigger_0.svg"
+            alt="Contact"
+            width={123}
+            height={85}
+            className="w-17.5 h-12 md:w-23 md:h-16 lg:w-30.75 lg:h-21.25"
+          />
         </button>
       </header>
 
