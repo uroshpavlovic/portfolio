@@ -1,7 +1,8 @@
 import ProjectGrid from "@/components/ProjectGrid";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/lib/projects";
 
 export default function Home() {
+  const projects = getProjects();
   return (
     <ProjectGrid projects={projects} />
   );

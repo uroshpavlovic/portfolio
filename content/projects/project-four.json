@@ -1,0 +1,15 @@
+{
+  "title": "Project Four",
+  "slug": "project-four",
+  "coverImage": "/images/projects/el/cover.jpg",
+  "type": "internal",
+  "order": 4,
+  "description": [
+    "Description of project four."
+  ],
+  "client": "Client Four",
+  "year": "2023",
+  "images": [
+    "/images/projects/el/cover.jpg"
+  ]
+}

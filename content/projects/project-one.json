@@ -1,0 +1,16 @@
+{
+  "title": "Liceulice #89:\nWatching football",
+  "slug": "project-one",
+  "coverImage": "/images/projects/lice-ulice-watching-football/cover.jpg",
+  "type": "internal",
+  "order": 1,
+  "description": [
+    "Liceulice is a street magazine. No. 89 was dedicated to football and everything related to football. This sport, like anything else, brings together such diverse people in one place, and serves as a framework for such diverse conversations. In this issue, we were interested in what in this game, and everything that follows it, can be truly progressive, and what can be truly dangerous."
+  ],
+  "client": "Liceulice",
+  "year": "2023",
+  "images": [
+    "/images/projects/lice-ulice-watching-football/cover.jpg",
+    "/images/projects/lice-ulice-watching-football/01.jpg"
+  ]
+}

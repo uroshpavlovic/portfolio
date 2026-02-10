@@ -1,9 +1,9 @@
 export interface Project {
-  id: string;
   slug: string;
   title: string;
   coverImage: string;
   type: 'external' | 'internal';
+  order?: number;
   externalUrl?: string;
   description?: string[];
   client?: string;

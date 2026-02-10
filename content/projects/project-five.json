@@ -1,0 +1,15 @@
+{
+  "title": "External Project",
+  "slug": "project-five",
+  "coverImage": "/images/projects/elementi/cover.png",
+  "type": "internal",
+  "order": 5,
+  "description": [
+    "Description of the external project."
+  ],
+  "client": "Client Five",
+  "year": "2024",
+  "images": [
+    "/images/projects/elementi/cover.png"
+  ]
+}

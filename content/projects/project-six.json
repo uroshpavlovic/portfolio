@@ -1,0 +1,15 @@
+{
+  "title": "Project Six",
+  "slug": "project-six",
+  "coverImage": "/images/projects/ioncleantech/cover.jpg",
+  "type": "internal",
+  "order": 6,
+  "description": [
+    "Another project description here."
+  ],
+  "client": "Client Six",
+  "year": "2024",
+  "images": [
+    "/images/projects/ioncleantech/cover.jpg"
+  ]
+}

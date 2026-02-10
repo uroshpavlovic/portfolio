@@ -13,7 +13,7 @@
 
     /* Semantic Colors */
     --background: var(--color-beige);
-    --foreground: var(--color-black);
+    --foreground: var(--color-navy);
     --surface: var(--color-white);
     --placeholder: var(--color-gray-light);
     --text-muted: var(--color-gray-dark);
@@ -21,9 +21,10 @@
 
     /* Typography */
     --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-md: 1.5rem;
-    --font-size-lg: 2rem;
+    --font-size-base: 26px;
+    --font-size-md: 32px;
+    --font-size-lg: 42px;
+    --font-weight-bold: 700;
     --font-weight-regular: 400;
     --font-weight-semibold: 600;
     --line-height-tight: 1.2;
@@ -92,7 +93,7 @@
     background-clip: padding-box;
   }
 
-  .masonry-grid_column > div {
+  .masonry-grid_column > * {
     margin-bottom: 16px;
   }
 
@@ -144,13 +145,13 @@
   .project-info {
     flex: 1;
     position: sticky;
-    top: 100px;
+    top: 156px;
     align-self: flex-start;
   }
 
   .project-title {
     font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-bold);
     margin-bottom: 24px;
     line-height: var(--line-height-tight);
   }
@@ -216,6 +217,15 @@
   }
 }
 
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  @layer components {
+    .project-info {
+      top: 198px;
+    }
+  }
+}
+
 /* Mobile Layout */
 @media (max-width: 768px) {
   @layer components {
@@ -226,7 +236,6 @@
 
     .project-info {
       position: static;
-      order: -1;
     }
 
     .project-title {

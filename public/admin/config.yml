@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/projects"
+public_folder: "/images/projects"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    identifier_field: "title"
+    sortable_fields: ["order", "title", "year"]
+    fields:
+      - { label: "Title", name: "title", widget: "text", hint: "Use line breaks for multi-line titles" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL path (auto-generated from title)" }
+      - { label: "Cover Image", name: "coverImage", widget: "image", required: true }
+      - { label: "Project Type", name: "type", widget: "select", options: ["internal", "external"] }
+      - { label: "Display Order", name: "order", widget: "number", default: 0, hint: "Lower numbers appear first" }
+      - { label: "External URL", name: "externalUrl", widget: "string", required: false, hint: "Only for external projects" }
+      - { label: "Client", name: "client", widget: "string", required: false }
+      - { label: "Year", name: "year", widget: "string", required: false }
+      - label: "Description"
+        name: "description"
+        widget: "list"
+        required: false
+        field: { label: "Paragraph", name: "paragraph", widget: "text" }
+      - label: "Gallery Images"
+        name: "images"
+        widget: "list"
+        required: false
+        field: { label: "Image", name: "image", widget: "image" }

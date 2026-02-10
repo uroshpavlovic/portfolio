@@ -22,9 +22,7 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
       columnClassName="masonry-grid_column"
     >
       {projects.map((project) => (
-        <div key={project.id}>
-          <ProjectCard project={project} />
-        </div>
+        <ProjectCard key={project.slug} project={project} />
       ))}
     </Masonry>
   );

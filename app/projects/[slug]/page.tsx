@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { projects } from "@/data/projects";
+import { getProjects, getProjectBySlug } from "@/lib/projects";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return projects
+  return getProjects()
     .filter((project) => project.type === "internal")
     .map((project) => ({
       slug: project.slug,
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = getProjectBySlug(slug);
 
   if (!project || project.type === "external") {
     notFound();

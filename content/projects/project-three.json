@@ -1,0 +1,16 @@
+{
+  "title": "Project Three\nWith Subtitle",
+  "slug": "project-three",
+  "coverImage": "/images/projects/end-of-story/cover.jpg",
+  "type": "internal",
+  "order": 3,
+  "description": [
+    "A detailed description of this illustration project.",
+    "Additional information about the creative process."
+  ],
+  "client": "Another Client",
+  "year": "2023",
+  "images": [
+    "/images/projects/end-of-story/cover.jpg"
+  ]
+}

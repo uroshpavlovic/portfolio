@@ -1,0 +1,15 @@
+{
+  "title": "Project Two",
+  "slug": "project-two",
+  "coverImage": "/images/projects/broken-string/cover.jpg",
+  "type": "internal",
+  "order": 2,
+  "description": [
+    "Description of project two."
+  ],
+  "client": "Client Two",
+  "year": "2023",
+  "images": [
+    "/images/projects/broken-string/cover.jpg"
+  ]
+}
