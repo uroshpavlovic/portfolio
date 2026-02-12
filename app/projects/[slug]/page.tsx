@@ -33,7 +33,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               marginBottom: "16px",
               display: row.layout === "double" ? "flex" : "block",
               gap: row.layout === "double" ? "16px" : undefined,
-              background: "var(--placeholder)",
             }}
           >
             <Image

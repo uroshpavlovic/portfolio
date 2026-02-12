@@ -132,7 +132,6 @@ img {
 .project-gallery-row {
   margin-bottom: 16px;
   display: block;
-  background: var(--placeholder);
 }
 
 .project-gallery-row.double {
@@ -156,7 +155,6 @@ img {
   height: auto;
   display: block;
   margin-bottom: 16px;
-  background: var(--placeholder);
 }
 
 /* ---------- Responsive ---------- */

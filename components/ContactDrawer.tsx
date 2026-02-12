@@ -35,7 +35,7 @@ export default function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
               alt="Close"
               width={123}
               height={85}
-              className="w-17.5 h-12 md:w-23 md:h-16 lg:w-30.75 lg:h-21.25"
+              className="w-17.5 h-12 md:w-23 md:h-16 lg:w-30.75 lg:h-21.25  p-0.75"
             />
           </button>
         </div>

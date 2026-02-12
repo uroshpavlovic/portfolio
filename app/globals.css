@@ -84,17 +84,13 @@
   /* Masonry Grid */
   .masonry-grid {
     display: flex;
-    margin-left: -16px;
-    width: auto;
+    gap: 20px;
   }
 
   .masonry-grid_column {
-    padding-left: 16px;
-    background-clip: padding-box;
-  }
-
-  .masonry-grid_column > * {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   /* Contact Drawer */
@@ -152,9 +148,8 @@
   .project-title {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
-    margin-top: 0;
     margin-bottom: 24px;
-    line-height: var(--line-height-tight);
+    line-height: 1;
   }
 
   .project-description {

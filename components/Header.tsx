@@ -23,7 +23,7 @@ export default function Header() {
 
         <button
           onClick={() => setIsDrawerOpen(true)}
-          className="cursor-pointer p-0.75"
+          className="cursor-pointer"
         >
           <Image
             src="/menu_trigger_0.svg"
