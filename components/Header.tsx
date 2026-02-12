@@ -10,8 +10,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex justify-between items-start sticky top-0 bg-transparent z-30 p-4 h-25 md:py-5 md:px-12.25 md:h-35 lg:py-6 lg:px-24.5 lg:h-[181.5px]">
-        <Link href="/">
+      <header className="flex justify-between items-start sticky top-0 bg-transparent z-30 p-4 h-25 md:py-5 md:px-12.25 md:h-35 lg:py-6 lg:px-24.5 lg:h-[181.5px] pointer-events-none">
+        <Link href="/" className="pointer-events-auto">
           <Image
             src="/logo.svg"
             alt="Uroš Pavlović"
@@ -23,7 +23,7 @@ export default function Header() {
 
         <button
           onClick={() => setIsDrawerOpen(true)}
-          className="cursor-pointer"
+          className="cursor-pointer pointer-events-auto"
         >
           <Image
             src="/menu_trigger_0.svg"

@@ -217,7 +217,7 @@
 @media (min-width: 1024px) {
   @layer components {
     .project-info {
-      top: 198px;
+      top: 170px;
     }
   }
 }
