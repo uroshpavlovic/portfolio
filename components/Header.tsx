@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex justify-between items-start sticky top-0 bg-(--background) z-30 p-4 h-25 md:py-5 md:px-6 md:h-35 lg:py-6 lg:px-28.75 lg:h-[181.5px]">
+      <header className="flex justify-between items-start sticky top-0 bg-transparent z-30 p-4 h-25 md:py-5 md:px-12.25 md:h-35 lg:py-6 lg:px-24.5 lg:h-[181.5px]">
         <Link href="/">
           <Image
             src="/logo.svg"
@@ -23,7 +23,7 @@ export default function Header() {
 
         <button
           onClick={() => setIsDrawerOpen(true)}
-          className="cursor-pointer"
+          className="cursor-pointer p-0.75"
         >
           <Image
             src="/menu_trigger_0.svg"

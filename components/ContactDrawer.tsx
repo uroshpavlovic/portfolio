@@ -16,7 +16,7 @@ export default function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
       />
 
       <div className={`drawer ${isOpen ? "open" : ""}`}>
-        <div className="flex justify-between items-start p-4 h-25 md:py-5 md:px-6 md:h-35 lg:py-6 lg:px-28.75 lg:h-[181.5px]">
+        <div className="flex justify-between items-start p-4 h-25 md:py-5 md:px-12.25 md:h-35 lg:py-6 lg:px-24.5 lg:h-[181.5px]">
           <Image
             src="/logo_overlay.svg"
             alt="Menu"
@@ -40,7 +40,7 @@ export default function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
           </button>
         </div>
 
-        <div className="px-4 md:px-6 lg:px-28.75 max-w-137.5">
+        <div className="px-4 md:px-12.25 lg:px-24.5 max-w-137.5">
           <p className="leading-[1.8]">
             Uroš Pavlović is tra la la la la la tra la la la laa
             tra la la la la laa tra la la la laa tra la la la la laa

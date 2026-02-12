@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-12.5 bg-(--surface) text-sm text-(--text-muted) flex flex-col items-start gap-4 py-6 px-4 md:flex-row md:items-center md:justify-between md:gap-0 md:py-8 md:px-6 lg:py-10 lg:px-28.75">
+    <footer className="mt-12.5 bg-(--surface) text-sm text-(--text-muted) flex flex-col items-start gap-4 py-6 px-4 md:flex-row md:items-center md:justify-between md:gap-0 md:py-8 md:px-12.25 lg:py-10 lg:px-24.5">
       <div className="flex items-center gap-3">
         <p>All content copyright Uroš Pavlović {year} ©</p>
         <Image

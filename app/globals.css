@@ -77,7 +77,7 @@
   }
 
   .text-meta {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     color: var(--text-muted);
   }
 
@@ -152,6 +152,7 @@
   .project-title {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
+    margin-top: 0;
     margin-bottom: 24px;
     line-height: var(--line-height-tight);
   }
@@ -166,7 +167,7 @@
   }
 
   .project-meta {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     color: var(--text-muted);
   }
 
