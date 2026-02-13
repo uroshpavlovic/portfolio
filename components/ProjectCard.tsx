@@ -11,10 +11,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   const cardContent = (
     <div
-      className={isInternal ? "project-image-transition" : undefined}
       style={{
         position: "relative",
         overflow: "hidden",
+        viewTransitionName: isInternal ? `project-image-${project.slug}` : undefined,
       }}
     >
       <Image

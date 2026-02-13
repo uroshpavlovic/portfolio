@@ -28,11 +28,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         {project.gallery?.map((row, index) => (
           <div
             key={index}
-            className={index === 0 ? "project-image-transition" : undefined}
             style={{
               marginBottom: "16px",
               display: row.layout === "double" ? "flex" : "block",
               gap: row.layout === "double" ? "16px" : undefined,
+              viewTransitionName: index === 0 ? `project-image-${slug}` : undefined,
             }}
           >
             <Image
@@ -74,7 +74,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </h1>
 
         {project.description && (
-          <div className="project-description">
+          <div className="project-description" >
             {project.description.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}

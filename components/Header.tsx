@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex justify-between items-start sticky top-0 bg-transparent z-30 p-4 h-25 md:py-5 md:px-12.25 md:h-35 lg:py-6 lg:px-24.5 lg:h-[181.5px] pointer-events-none">
+      <header className="flex justify-between items-start sticky top-0 bg-transparent z-30 p-4 h-23.75 md:py-5 md:px-12.25 md:h-31.25 lg:py-6 lg:px-24.5 lg:h-40.25 pointer-events-none">
         <Link href="/" className="pointer-events-auto">
           <Image
             src="/logo.svg"
@@ -30,7 +30,7 @@ export default function Header() {
             alt="Contact"
             width={123}
             height={85}
-            className="w-17.5 h-12 md:w-23 md:h-16 lg:w-30.75 lg:h-21.25"
+            className="w-15 h-10.25 md:w-19.5 md:h-13.5 lg:w-26.25 lg:h-18"
           />
         </button>
       </header>

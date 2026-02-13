@@ -22,7 +22,7 @@ export default function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
             alt="Menu"
             width={96}
             height={102}
-            className="w-13.5 h-14.25 p-1.25 md:w-18 md:h-19.25 lg:w-24 lg:h-25.5"
+            className="w-12.75 h-13.5 mt-2.5 md:w-17 md:h-18.25 lg:w-22.75 lg:h-24.25"
           />
 
           <button
@@ -35,7 +35,7 @@ export default function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
               alt="Close"
               width={123}
               height={85}
-              className="w-17.5 h-12 md:w-23 md:h-16 lg:w-30.75 lg:h-21.25  p-0.75"
+              className="w-15 h-10.25 md:w-19.5 md:h-13.5 lg:w-26.25 lg:h-18"
             />
           </button>
         </div>
